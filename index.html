@@ -12,7 +12,22 @@
         <h1>Mis Películas Favoritas</h1>
     </header>
     <main id="main">
-        Cargando...
+        <section id="form-section">
+            <h2>Agregar/Editar Película</h2>
+            <form id="movie-form">
+                <label for="movie-title">Título:</label>
+                <input type="text" id="movie-title" name="title" required>
+                <label for="movie-description">Descripción:</label>
+                <textarea id="movie-description" name="description" required></textarea>
+                <button type="submit">Guardar</button>
+            </form>
+        </section>
+        <section id="movies-list-section">
+            <h2>Lista de Películas</h2>
+            <ul id="movies-list">
+                <!-- Aquí se cargarán las películas dinámicamente -->
+            </ul>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
