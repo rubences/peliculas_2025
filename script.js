@@ -196,6 +196,29 @@ const resetContr = async () => {
      }
 }
 
+// Agregar imágenes al DOM
+const agregarImagenes = () => {
+    const contenedor = document.getElementById('main');
+    const imagenes = [
+        { src: 'files/interstellar.png', alt: 'Interstellar' },
+        { src: 'files/jurassicpark.png', alt: 'Jurassic Park' },
+        { src: 'files/superlopez.png', alt: 'Superlópez' }
+    ];
+
+    imagenes.forEach(imagen => {
+        const imgElement = document.createElement('img');
+        imgElement.src = imagen.src;
+        imgElement.alt = imagen.alt;
+        imgElement.onerror = () => imgElement.src = 'files/placeholder.png';
+        contenedor.appendChild(imgElement);
+    });
+};
+
+// Llamar a la función después de cargar el contenido del DOM
+document.addEventListener('DOMContentLoaded', () => {
+    agregarImagenes();
+});
+
 // ROUTER de eventos
 const matchEvent = (ev, sel) => ev.target.matches(sel)
 const myId = (ev) => Number(ev.target.dataset.myId)
