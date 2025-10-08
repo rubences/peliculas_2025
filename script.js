@@ -65,6 +65,7 @@ const indexView = (peliculas) => {
               <div class="actions">
                     <button class="edit" data-my-id="${i}">editar</button>
                     <button class="delete" data-my-id="${i}">borrar</button>
+                    <button class="show" data-my-id="${i}">ver</button>
                 </div>
           </div>\n`;
         i = i + 1;
@@ -150,8 +151,8 @@ const indexContr = async () => {
 }
 
 const showContr = (i) => {
-     document.getElementById('main').innerHTML = showView(mis_peliculas[i]);
-}
+    document.getElementById('main').innerHTML = showView(mis_peliculas[i]);
+};
 
 const newContr = () => {
      document.getElementById('main').innerHTML = newView();
@@ -231,6 +232,7 @@ document.addEventListener('click', ev => {
      else if (matchEvent(ev, '.new'))    newContr    ();
      else if (matchEvent(ev, '.create')) createContr ();
      else if (matchEvent(ev, '.reset'))  resetContr  ();
+     else if (matchEvent(ev, '.show'))   showContr    (myId(ev));
 })
 
 // Inicialización        
